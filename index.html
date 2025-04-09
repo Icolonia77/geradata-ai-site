@@ -29,12 +29,20 @@
     gtag('config', 'G-G1H5941RSK');
   </script>
 
+  <!-- reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <!-- Form success handler -->
   <script>
     window.addEventListener("DOMContentLoaded", function () {
       const form = document.querySelector("form");
       if (form) {
         form.addEventListener("submit", function (e) {
+          if (grecaptcha.getResponse() === '') {
+            e.preventDefault();
+            alert("Por favor, confirme que você não é um robô.");
+            return;
+          }
           e.preventDefault();
           const data = new FormData(form);
           fetch(form.action, {
@@ -47,6 +55,7 @@
             if (response.ok) {
               alert("Mensagem enviada com sucesso! Obrigado pelo contato.");
               form.reset();
+              grecaptcha.reset();
             } else {
               alert("Erro ao enviar. Tente novamente mais tarde.");
             }
@@ -146,7 +155,8 @@
 <body>
   <header>
     <img src="https://icolonia77.github.io/geradata-ai-site/imagem-preview.png" alt="GeraData AI">
-
+    <h1>GeraData AI</h1>
+    <p>Consultoria em IA Generativa para Empresas</p>
   </header>
 
   <main>
@@ -181,6 +191,8 @@
 
         <label for="message">Mensagem</label>
         <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+
+        <div class="g-recaptcha" data-sitekey="6Lcn_EopAAAAAKwEaYZIARcc6zrQh2mf29X0XxUw"></div>
 
         <button type="submit">Enviar Mensagem</button>
       </form>
