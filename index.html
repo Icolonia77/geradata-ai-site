@@ -54,6 +54,22 @@
       color: white;
       padding: 3rem 2rem;
       text-align: center;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      background-image: url('https://icolonia77.github.io/geradata-ai-site/imagem-preview.png');
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    header h1,
+    header p {
+      position: relative;
+      z-index: 1;
     }
     header h1 {
       font-size: 3rem;
