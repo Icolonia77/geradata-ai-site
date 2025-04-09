@@ -29,10 +29,8 @@
     gtag('config', 'G-G1H5941RSK');
   </script>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -52,13 +50,6 @@
       max-width: 100%;
       height: auto;
       margin-bottom: 1.5rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
     }
     main {
       padding: 2rem;
@@ -154,7 +145,20 @@
       <h2>Entre em Contato</h2>
       <p><strong>Celular:</strong> (19) 98996-3385</p>
       <p><strong>E-mail:</strong> <a href="mailto:coloniaster@gmail.com">coloniaster@gmail.com</a></p>
-      <p>Fale conosco e descubra como podemos acelerar a transformação da sua empresa com IA Generativa.</p>
+      <p>Ou envie sua mensagem diretamente usando o formulário abaixo:</p>
+
+      <form action="https://formspree.io/f/xnnplapw" method="POST">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Enviar Mensagem</button>
+      </form>
     </section>
   </main>
 
